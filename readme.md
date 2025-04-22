@@ -10,7 +10,7 @@ Brief description of your what your project is about and why you chose that topi
 
 ### Key Takeaways
 
-What have you learned or practiced during this semester that aided in the completion of your project? I have learned about Java Script coding and how it works. 
+What have you learned or practiced during this semester that aided in the completion of your project? This year, I learned how to perform JavaScript and how to start coding using it. We did the basics, like learning to write simple code and make things work on a website. This really helped me out when doing my project.
 
 ### Core Webpages
 
