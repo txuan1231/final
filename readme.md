@@ -10,7 +10,7 @@ Brief description of your what your project is about and why you chose that topi
 
 ### Key Takeaways
 
-What have you learned or practiced during this semester that aided in the completion of your project.
+What have you learned or practiced during this semester that aided in the completion of your project? I have learned about Java Script coding and how it works. 
 
 ### Core Webpages
 
@@ -24,4 +24,4 @@ Describe your local storage data structure with rationale.
 
 ### Members & Responsibilities
 
-List all members, their roles, and their planned contributions to the project
+Abdallah: Analyst, 
