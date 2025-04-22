@@ -2,7 +2,7 @@
 
 ### Project Summary
 
-Brief description of your what your project is about and why you chose that topic. Describe how topic relates to category.
+For our JavaScript class group project, we are building an interactive website that explores a variety of unusual and fascinating careers. We each chose a unique job to research: ethical hacker, crime scene cleaner, bounty hunter, and one more still to be decided, and created individual tabs for each one. On our site, users can click through the tabs to learn more about each profession, including what the job involves, the skills needed, and other interesting facts. Through this project, we are applying our JavaScript and web development skills to design a creative and informative experience for our users.
 
 ### Live Link
 
@@ -24,4 +24,7 @@ Describe your local storage data structure with rationale.
 
 ### Members & Responsibilities
 
-Abdallah: Analyst, 
+Thomas Xuan: President, Scrum Master
+Abdallah Abu Mayaleh: Analyst
+Jiaoqi Luo: Architect
+Xavier Kyser: Designer
