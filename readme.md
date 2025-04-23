@@ -14,7 +14,9 @@ What have you learned or practiced during this semester that aided in the comple
 
 ### Core Webpages
 
-List core webpages and briefly describe the page of them
+Home: This page engaging summary of the site's purpose
+About: explain the mission for each unusual jobs
+Description: list and directory of unusual jobs. and include description of job,required skilled, average salary, pros and cons. 
 
 ### Design Choices & Local Storage Design
 
