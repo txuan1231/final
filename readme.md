@@ -16,11 +16,11 @@ What have you learned or practiced during this semester that aided in the comple
 
 Home: This page engaging summary of the site's purpose
 About: explain the mission for each unusual jobs
-Description: list and directory of unusual jobs. and include description of job,required skilled, average salary, pros and cons. 
+Description: list and directory of unusual jobs. and include description of job,required skilled, average salary, pros and cons.
 
 ### Design Choices & Local Storage Design
 
-List any websites that you might reference to influence your styling choices. List any colors used and what they were used for.
+We aim to have a unified, yet individualistic design to our website. We figure that due to the jobs being different, yet under the umbrella of Unique Jobs, the colors we use may be different, yet the layout and structure all share the same skeleton.
 
 Describe your local storage data structure with rationale.
 
