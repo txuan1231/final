@@ -22,7 +22,7 @@ Description: list and directory of unusual jobs. and include description of job,
 
 We aim to have a unified, yet individualistic design to our website. We figure that due to the jobs being different, yet under the umbrella of Unique Jobs, the colors we use may be different, yet the layout and structure all share the same skeleton.
 
-Describe your local storage data structure with rationale.
+The data we are using will be gathered from several different sources and websites.
 
 ### Members & Responsibilities
 
