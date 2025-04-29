@@ -4,9 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ethical Hacker</title>
+    <link rel="stylesheet" href="css/ethical.css" />
   </head>
   <body>
-    <h1>Ethical Hacker</h1>
-  </body>
+    <header>
+      <h1>Ethical Hacker</h1>
+    </header>
+    <nav>
+      <a href="index.html">Ethical Hacker</a>
+      <a href="bountyhunter.html">Bounty Hunter</a>
+      <a href="csc.html">Crime Scene Cleaner</a>
+      <a href="dogfoodtester.html">Dog Food Tester</a>
+    </nav>
+    <main>
+      <section id="info">
+        <h2>Description</h2>
+        <p>
+          Ethical hackers identify security vulnerabilities in systems before
+          malicious hackers can exploit them. They use the same tools as hackers
+          but legally and ethically to improve cybersecurity.
+        </p>
+        <img id="hackerImage1" class="img" />
+      </section>
+      <section id="salary">
+        <h2>Salary</h2>
+        <p>
+          $80,000 - $150,000 per year depending on experience and
+          certifications.
+        </p>
+      </section>
+      <section id="skills">
+        <h2>Required Skills</h2>
+        <ul>
+          <li>Network security protocols</li>
+          <li>Penetration testing</li>
+          <li>Programming (Python, JavaScript)</li>
+          <li>Cryptography basics</li>
+        </ul>
+        <img id="hackerImage2" class="img" />
+      </section>
+      <section id="more-info">
+        <button id="toggleInfoBtn">Show More About Ethical Hacking</button>
+        <div id="more-info-content" class="hidden">
+          <h3>Types of Hackers</h3>
+          <ul>
+            <li>
+              <strong>White Hat:</strong> Authorized cybersecurity professionals
+            </li>
+            <li><strong>Black Hat:</strong> Malicious hackers</li>
+            <li>
+              <strong>Gray Hat:</strong> Hack without permission but report
+              issues
+            </li>
+          </ul>
+          <h3>Certifications</h3>
+          <ul>
+            <li>CEH (Certified Ethical Hacker)</li>
+            <li>OSCP (Offensive Security Certified Professional)</li>
+          </ul>
+          <h3>Day-to-Day Tasks</h3>
+          <p>
+            Ethical hackers perform penetration testing, vulnerability
+            assessments, and security audits for organizations.
+          </p>
+        </div>
+      </section>
+      <section id="password-lab">
+        <h2>Password Security Lab</h2>
+        <div class="password-tool">
+          <input
+            type="text"
+            id="passwordInput"
+            placeholder="Test a password..."
+          />
+          <button id="checkBtn">Check Strength</button>
+          <div id="strengthResult"></div>
+          <h3>Your Saved Tests</h3>
+          <ul id="savedPasswords"></ul>
+          <button id="clearBtn">Clear All</button>
+        </div>
+      </section>
+    </main>
+    <script src="js/local.js"></script>
   </body>
 </html>
