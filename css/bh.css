@@ -16,7 +16,26 @@ header h1 {
   text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff,
     -2px 2px 0 #ffffff;
 }
-main {
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light background for contrast */
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 50px; /* Makes the border oval */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover main {
   padding: 20px;
   max-width: 900px;
   margin: auto;
