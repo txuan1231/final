@@ -10,7 +10,7 @@ function Info() {
   info.innerHTML = `
     <h2>Bounty Hunter Description</h2>
     <p>Bounty Hunters are private agents who capture fugitives or criminals for a commission or bounty, typically working for a bail bondsman. The job has existed ever since the middle ages of Europe. They are essentially the enforcers of the private bail system, hired to locate, apprehend, and return individuals who have skipped bail or failed to appear in court. </p>
-    <img src="bountyimages/crimeSceneCleaner1.jpg" alt="CrimeSceneCleaner" class="img">
+    <img src="bountyimages/Christoph-Waltz-and-Jamie-Foxx-in-Django-Unchained-Featured-Image.avif" alt="BountyHunter" class="img">
     `;
 }
 
