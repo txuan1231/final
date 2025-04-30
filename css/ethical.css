@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #393a3b;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #343a40;
+  text-align: center;
+  padding: 20px;
+}
+header h1 {
+  color: #ac2a2a;
+  font-size: 48px;
+  text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+nav a {
+  padding: 10px 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+nav a:hover {
+  background-color: #333;
+  color: white;
+}
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
+}
+section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  padding-bottom: 5px;
+}
+.img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.password-tool {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+input[type="text"] {
+  padding: 8px;
+  width: 70%;
+  margin-right: 10px;
+  background: white;
+  color: #333;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 5px 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #0056b3;
+}
+#strengthResult {
+  margin: 15px 0;
+  padding: 10px;
+  font-weight: bold;
+  min-height: 20px;
+}
+#savedPasswords {
+  list-style-type: none;
+  padding: 0;
+}
+#savedPasswords li {
+  margin: 5px 0;
+  padding: 8px;
+  background: white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dee2e6;
+}
+#savedPasswords button {
+  background-color: #dc3545;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+#savedPasswords button:hover {
+  background-color: #bb2d3b;
+}
+#more-info-content {
+  padding: 15px;
+  background: #e9ecef;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.hidden {
+  display: none;
+}
