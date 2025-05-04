@@ -6,7 +6,7 @@ For our JavaScript class group project, we are building an interactive website t
 
 ### Live Link
 
-[Home Page](https://{username}.github.io/{reponame}/final)
+[Home Page](https://txuan1231.github.io/final/index.html)
 
 ### Key Takeaways
 

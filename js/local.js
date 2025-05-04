@@ -21,6 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "thomasimages/ethicalhacker2.jpg";
     });
 
+  const authBtn = document.getElementById("auth-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  authBtn.addEventListener("click", handleAuth);
+  logoutBtn.addEventListener("click", handleLogout);
+  updateAuthUI();
+
   document
     .getElementById("checkBtn")
     .addEventListener("click", checkPasswordStrength);
@@ -30,6 +37,60 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", toggleMoreInfo);
   loadSavedPasswords();
 });
+
+function handleAuth() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!username || !password) {
+    document.getElementById("auth-message").textContent =
+      "Please enter both fields";
+    return;
+  }
+
+  if (password.length < 6) {
+    document.getElementById("auth-message").textContent =
+      "Password must be 6+ characters";
+    return;
+  }
+
+  localStorage.setItem(
+    "authUser",
+    JSON.stringify({
+      username,
+      loggedIn: true,
+      lastLogin: new Date().toISOString(),
+    })
+  );
+
+  updateAuthUI();
+  document.getElementById("auth-message").textContent = "";
+}
+
+function handleLogout() {
+  localStorage.removeItem("authUser");
+  updateAuthUI();
+}
+
+function updateAuthUI() {
+  const authUser = JSON.parse(localStorage.getItem("authUser"));
+  const loginForm = document.getElementById("login-form");
+  const userGreeting = document.getElementById("user-greeting");
+
+  if (authUser?.loggedIn) {
+    loginForm.classList.add("hidden");
+    userGreeting.classList.remove("hidden");
+    document.getElementById("display-name").textContent = authUser.username;
+  } else {
+    loginForm.classList.remove("hidden");
+    userGreeting.classList.add("hidden");
+  }
+}
+
+function isAuthenticated() {
+  const authUser = JSON.parse(localStorage.getItem("authUser"));
+  return authUser?.loggedIn === true;
+}
 
 function checkPasswordStrength() {
   const password = document.getElementById("passwordInput").value;
@@ -65,30 +126,50 @@ function displayResult(strength) {
 }
 
 function savePassword(password, strength) {
+  if (!isAuthenticated()) {
+    alert("Please login to save password tests");
+    return;
+  }
+
   if (!password) return;
+
+  const authUser = JSON.parse(localStorage.getItem("authUser"));
   const passwords = JSON.parse(localStorage.getItem("passwords")) || [];
+
   passwords.push({
+    user: authUser.username,
     password: "*".repeat(password.length),
     strength: strength,
-    timestamp: new Date().toLocaleTimeString(),
+    timestamp: new Date().toLocaleString(),
   });
+
   localStorage.setItem("passwords", JSON.stringify(passwords));
   loadSavedPasswords();
 }
 
 function loadSavedPasswords() {
-  const savedPasswords = JSON.parse(localStorage.getItem("passwords")) || [];
+  const authUser = JSON.parse(localStorage.getItem("authUser"));
+  const allPasswords = JSON.parse(localStorage.getItem("passwords")) || [];
+
+  const userPasswords = isAuthenticated()
+    ? allPasswords.filter((p) => p.user === authUser.username)
+    : [];
+
   const list = document.getElementById("savedPasswords");
-  list.innerHTML = savedPasswords
-    .map(
-      (pwd, index) => `
+  list.innerHTML =
+    userPasswords.length > 0
+      ? userPasswords
+          .map(
+            (pwd, index) => `
         <li>
             ${pwd.password} (${pwd.strength}) at ${pwd.timestamp}
             <button onclick="deletePassword(${index})">Delete</button>
-        </li>
-    `
-    )
-    .join("");
+        </li>`
+          )
+          .join("")
+      : "<li>No saved tests" +
+        (isAuthenticated() ? "" : " - login to save") +
+        "</li>";
 }
 
 function deletePassword(index) {
