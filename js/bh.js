@@ -42,17 +42,28 @@ function Skill() {
 function Game() {
   const training = document.getElementById("game");
   training.innerHTML = `
-    <h2>Bounty Hunter Game</h2>
-    <p>"Once you get tangled with the mob, you will forever be a part of the mob. At least they pay a decent salary and all you have to do is clean up after their dirty work, but you know what you’re doing. So clean crime scenes, earn as much money as you can, and get ready for the next mission."</p>
-    <ul>
-    <li>Platforms: Xbox Cloud Gaming, GeForce Now, Microsoft Windows, Android</li>
-    <li>Developers: President Studio, President Studio S.A.</li>
-    <li>Initial release date: September 28, 2023</li>
-    <li>Genres: Simulation video game, Action game</li>
-    <li>Publishers: President Studio, Digital Melody, PlayWay, President Studio S.A.</li>
-    </ul>
-    <img src="CSCimage/crimeSceneCleaner.jpg" alt="CrimeSceneCleanerGame" class="img">
-    `;
+    <h2>Bounty Hunter GearList</h2>
+    <p>"A printable gearlist of what you need to begin your hunt for bounties. Simply hover over the image below to show the print option."</p>
+    <div id="gear-container" style="position: relative; display: inline-block;">
+      <img src="bountyimages/bounty-hunters-gear-w.jpg" alt="checklist" class="img" id="gear-image">
+      <button id="print-btn" style="position: absolute; bottom: 10px; left: 10px; display: none;">Print</button>
+    </div>
+  `;
+
+  const gearImage = document.getElementById("gear-image");
+  const printBtn = document.getElementById("print-btn");
+
+  gearImage.addEventListener("mouseover", () => {
+    printBtn.style.display = "block";
+  });
+
+  gearImage.addEventListener("mouseout", () => {
+    printBtn.style.display = "none";
+  });
+
+  printBtn.addEventListener("click", () => {
+    window.print();
+  });
 }
 
 function content(type) {

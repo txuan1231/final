@@ -3,7 +3,9 @@ body {
   background-color: #393a3b;
   margin: 0;
   padding: 0;
+  color: #333;
 }
+
 header {
   background-color: #343a40;
   text-align: center;
@@ -16,12 +18,13 @@ header h1 {
   text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff,
     -2px 2px 0 #ffffff;
 }
+
 nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  background-color: #f0f0f0; /* Light background for contrast */
+  background-color: #f0f0f0;
 }
 
 nav a {
@@ -31,25 +34,46 @@ nav a {
   color: #333;
   font-weight: bold;
   border: 2px solid #333;
-  border-radius: 50px; /* Makes the border oval */
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: 50px;
+  transition: all 0.3s;
 }
 
-nav a:hover main {
+nav a:hover {
+  background-color: #333;
+  color: white;
+}
+
+main {
   padding: 20px;
   max-width: 900px;
-  margin: auto;
+  margin: 20px auto;
   background: white;
   border-radius: 8px;
   box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
 }
+
 section {
   margin-bottom: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
 }
-section h2 {
+
+section h2,
+h2 {
   font-size: 28px;
   color: #333;
+  padding-bottom: 5px;
 }
+
+.img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 button {
   background-color: #007bff;
   color: white;
@@ -65,20 +89,45 @@ button:hover {
   background-color: #0056b3;
 }
 
-.info-box {
+input[type="text"],
+input[type="password"] {
+  padding: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  background: white;
+  color: #333;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+
+#auth-section {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#auth-message {
+  min-height: 20px;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+#user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#box.boxInfo {
   margin-top: 15px;
   padding: 15px;
   border-left: 5px solid #007bff;
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
   border-radius: 5px;
 }
 
 .hidden {
   display: none;
-}
-
-.img {
-  width: 100%;
-  height: auto;
-  margin-top: 20px;
 }
