@@ -1,11 +1,16 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
     Info();
     Salary();
     Skill();
     Game();
+
+    const last = localStorage.getItem('lastContent');
+    if (last) {
+        content(last);
+    }
 });
 
-function Info(){
+function Info() {
     const info = document.getElementById('info');
     info.innerHTML = `
     <h2>Dog Food Tester Description</h2>
@@ -14,7 +19,7 @@ function Info(){
     `;
 }
 
-function Salary(){
+function Salary() {
     const salary = document.getElementById('salary');
     salary.innerHTML = `
     <h2>Salary</h2>
@@ -22,7 +27,7 @@ function Salary(){
     `;
 }
 
-function Skill(){
+function Skill() {
     const skill = document.getElementById('skill');
     skill.innerHTML = `
     <h2>Main Skills</h2>
@@ -47,11 +52,11 @@ function Game() {
     `;
 }
 
-function content(type){
+function content(type) {
     const box = document.getElementById('box');
     let content = '';
 
-    if(type === 'advantage'){
+    if (type === 'advantage') {
         content = `
         <h3>Advantages</h3>
         <ul>
@@ -60,7 +65,7 @@ function content(type){
             <li>Can lead to careers in pet nutrition or product development</li>
         </ul>
         `;
-    } else if(type === 'disadvantage'){
+    } else if (type === 'disadvantage') {
         content = `
         <h3>Disadvantages</h3>
         <ul>
@@ -73,4 +78,6 @@ function content(type){
 
     box.innerHTML = content;
     box.classList.remove('hidden');
+
+    localStorage.setItem('lastContent', type);
 }
