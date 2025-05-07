@@ -3,7 +3,45 @@ document.addEventListener('DOMContentLoaded', function(){
     Salary();
     Skill();
     Game();
+
+    document.getElementById('auth-btn').addEventListener('click', login);
+    document.getElementById('logout-btn').addEventListener('click', logout);
 })
+
+function login() {
+    const usernameInput = document.getElementById('username').value.trim();
+    const passwordInput = document.getElementById('password').value.trim();
+    const message = document.getElementById('auth-message');
+
+    if (usernameInput && passwordInput) {
+        localStorage.setItem('loggedInUser', usernameInput);
+        message.textContent = '';
+        showGreeting(usernameInput);
+    } else {
+        message.textContent = 'Please enter a username and password.';
+    }
+}
+
+function logout() {
+    localStorage.removeItem('loggedInUser');
+    document.getElementById('user-greeting').classList.add('hidden');
+    document.getElementById('login-form').classList.remove('hidden');
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+}
+
+function checkLoginStatus() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        showGreeting(loggedInUser);
+    }
+}
+
+function showGreeting(username) {
+    document.getElementById('login-form').classList.add('hidden');
+    document.getElementById('user-greeting').classList.remove('hidden');
+    document.getElementById('display-name').textContent = username;
+}
 
 function Info(){
     const info = document.getElementById('info');
