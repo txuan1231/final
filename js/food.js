@@ -4,10 +4,21 @@ document.addEventListener('DOMContentLoaded', function () {
     Skill();
     Game();
 
-    const last = localStorage.getItem('lastContent');
-    if (last) {
-        content(last);
-    }
+    const box = document.getElementById('box');
+
+    box.classList.add('hidden');
+
+    const advantageBtn = document.querySelector('button[onclick="content(\'advantage\')"]');
+
+    const disadvantageBtn = document.querySelector('button[onclick="content(\'disadvantage\')"]');
+
+    advantageBtn.addEventListener('click', function() {
+        content('advantage');
+    });
+
+    disadvantageBtn.addEventListener('click', function() {
+        content('disadvantage');
+    });
 });
 
 function Info() {
@@ -15,16 +26,14 @@ function Info() {
     info.innerHTML = `
     <h2>Dog Food Tester Description</h2>
     <p>A dog food tester checks the quality, taste, and nutrition of dog food. They taste the food to make sure it’s safe, has a good texture, and follows pet nutrition rules. Some testers also give feedback on how the food smells, feels, and is packaged.</p>
-    <img src="DOGimage/dog2.jpg" alt="Dog Food Tester at work" class="img">
-    `;
+    <img src="DOGimage/dog2.jpg" alt="Dog Food Tester at work" class="img">`;
 }
 
 function Salary() {
     const salary = document.getElementById('salary');
     salary.innerHTML = `
     <h2>Salary</h2>
-    <p>Dog food testers can earn between $30,000 and $75,000 annually, depending on the company and their level of experience in food science or animal nutrition.</p>
-    `;
+    <p>Dog food testers can earn between $30,000 and $75,000 annually, depending on the company and their level of experience in food science or animal nutrition.</p>`;
 }
 
 function Skill() {
@@ -38,8 +47,7 @@ function Skill() {
         <li>Attention to detail</li>
         <li>Ability to handle unusual work environments</li>
         <li>Report writing and product analysis</li>
-    </ul>
-    `;
+    </ul>`;
 }
 
 function Game() {
@@ -48,8 +56,7 @@ function Game() {
         <h2>Dog Food Lab</h2>
         <p>Dog food testers work in special labs where they check the taste, smell, and feel of dog food. They wear lab coats and write down how each food tastes. Some foods are soft, others are dry and crunchy.</p>
         <p>The testers also check if the food is safe and healthy for dogs. Later, they give the food to real dogs to see if the dogs like it. It’s a mix of tasting and science!</p>
-    <img src="DOGimage/dog1.jpg" alt="Dog Food Tester at work" class="img">
-    `;
+    <img src="DOGimage/dog1.jpg" alt="Dog Food Tester at work" class="img">`;
 }
 
 function content(type) {
@@ -63,8 +70,7 @@ function content(type) {
             <li>Unique and rare profession</li>
             <li>Often includes travel and testing various brands</li>
             <li>Can lead to careers in pet nutrition or product development</li>
-        </ul>
-        `;
+        </ul>`;
     } else if (type === 'disadvantage') {
         content = `
         <h3>Disadvantages</h3>
@@ -72,11 +78,11 @@ function content(type) {
             <li>Testing pet food can be unpleasant</li>
             <li>Not widely understood or respected</li>
             <li>Limited job openings</li>
-        </ul>
-        `;
+        </ul>`;
     }
 
     box.innerHTML = content;
+
     box.classList.remove('hidden');
 
     localStorage.setItem('lastContent', type);
